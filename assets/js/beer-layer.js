@@ -3,7 +3,7 @@
  contributors : nlehuby, Maxime Corteel, Poilou (labiloute), l-vincent-l, Dan (DTHG)
 */
 
-var overpassBaseUrl = "//overpass-api.de/api/interpreter?";
+var overpassBaseUrl = "//overpass.kumi.systems/api/interpreter?";
 var restaurant_switch = false;
 var overlayAll = draw_beer(overpassBaseUrl + make_overlayAll(restaurant_switch), "assets/img/beers/gray.png", false);
 var beerList = [];
