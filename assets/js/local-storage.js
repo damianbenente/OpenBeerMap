@@ -15,12 +15,12 @@ function init_local_storage()
     if(localStorage.getItem('favoriteBeers') === null)
     {
         localStorage.clear();
-        localStorage.setItem('favoriteBeers', "Guinness;Heineken");
+        localStorage.setItem('favoriteBeers', "Manush;Wesley;La_cruz;Konna;Blest");
         console.log("INFO: clearing localStorage for new system");
     }
     if(localStorage.getItem('favoriteBeers') === "")
     {
-        localStorage.setItem('favoriteBeers', "Guinness;Heineken");
+        localStorage.setItem('favoriteBeers', "Manush;Wesley;La_cruz;Konna;Blest");
         console.log("INFO: resetting favorite beers with default ones");
     }
 
