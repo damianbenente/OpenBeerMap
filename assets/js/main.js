@@ -13,7 +13,7 @@ var osm_stamen = new L.TileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/tone
 var osm_cartodb = new L.TileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', tilelayer_properties);
 var tile_layer_list = [osm_cartodb, osm_stamen]
 
-var map = new L.Map('map').addLayer(osm_cartodb).setView(new L.LatLng(48.84702,2.37705), 17);
+var map = new L.Map('map').addLayer(osm_cartodb).setView(new L.LatLng(-41.1272,-71.3121), 17);
 
 function change_layer(layer_to_add)
 {
