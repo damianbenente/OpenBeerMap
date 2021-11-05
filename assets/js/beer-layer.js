@@ -26,6 +26,7 @@ function make_overlayAll(restaurant)
     overpass_url += ");out center;" //overpass_url += ");out center;>;out;"
     return overpass_url
 }
+/*
 function debug_draw_beer(url, icon)
 {
     return new L.OverPassLayer({
@@ -76,7 +77,7 @@ function debug_draw_beer(url, icon)
         }
     })
 }
-
+*/
 var markerIcons = [];
 
 function draw_beer(query, icon, surcharge)
