@@ -115,6 +115,7 @@ function draw_beer(query, icon, surcharge)
                         {
                             console.log("way");
                             var pos = new L.LatLng(e.center.lat, e.center.lon);
+                            console.log(pos);
                         }
                         else
                         {
