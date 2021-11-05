@@ -110,6 +110,7 @@ function draw_beer(query, icon, surcharge)
                     {//If element is a way or a relation, get its center
                         if (e.tags['amenity'])
                         {
+                            console.log(e);
                             var pos = new L.LatLng(e.center.lat, e.center.lon);
                         }
                         else
