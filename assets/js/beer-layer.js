@@ -103,6 +103,7 @@ function draw_beer(query, icon, surcharge)
                         {
                             console.log("node");
                             var pos = new L.LatLng(e.lat, e.lon);
+                            console.log(pos);
                         }
                         else
                         {
