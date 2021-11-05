@@ -101,7 +101,7 @@ function draw_beer(query, icon, surcharge)
                     {//If element is a node
                         if (e.tags['amenity'])
                         {
-                            console.log("node");
+                            console.log("node2");
                             var pos = new L.LatLng(e.lat, e.lon);
                             console.log(pos);
                         }
@@ -110,7 +110,7 @@ function draw_beer(query, icon, surcharge)
                             return
                         }
                     }
-                    else if (e.type === "way")
+                    else if (e.type === "way2")
                     {//If element is a way or a relation, get its center
                         if (e.tags['amenity'])
                         {
@@ -163,6 +163,8 @@ function draw_beer(query, icon, surcharge)
                     var myicon = markerIcons[icon_o];
 
                     var marker = L.marker(pos, {icon: myicon}).bindPopup(content);
+                 console.log("marker");
+                    console.log(marker);
                     this.instance.addLayer(marker);
 
                     marker.on('click', function(e){
