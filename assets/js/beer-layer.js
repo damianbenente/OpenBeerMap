@@ -23,7 +23,7 @@ function make_overlayAll(restaurant)
     {
         overpass_url += "node(BBOX)[amenity=restaurant]['brewery'!='none'];way(BBOX)[amenity=restaurant]['brewery'!='none'];"
         }
-    overpass_url += ");out center;>;out;"
+    overpass_url += ");out center;" //overpass_url += ");out center;>;out;"
     return overpass_url
 }
 function debug_draw_beer(url, icon)
