@@ -110,11 +110,11 @@ function draw_beer(query, icon, surcharge)
                             return
                         }
                     }
-                    else if (e.type === "way2")
+                    else if (e.type === "way")
                     {//If element is a way or a relation, get its center
                         if (e.tags['amenity'])
                         {
-                            console.log("way");
+                            console.log("way2");
                             var pos = new L.LatLng(e.center.lat, e.center.lon);
                             console.log(pos);
                         }
@@ -161,9 +161,10 @@ function draw_beer(query, icon, surcharge)
                         });
                     }
                     var myicon = markerIcons[icon_o];
-
+                    console.log(pos)
+                    console.log(content)
                     var marker = L.marker(pos, {icon: myicon}).bindPopup(content);
-                 console.log("marker");
+                    console.log("marker");
                     console.log(marker);
                     this.instance.addLayer(marker);
 
