@@ -101,7 +101,7 @@ function draw_beer(query, icon, surcharge)
                     {//If element is a node
                         if (e.tags['amenity'])
                         {
-                            console.log("node2");
+                            console.log("node3");
                             var pos = new L.LatLng(e.lat, e.lon);
                             console.log(pos);
                         }
@@ -114,7 +114,7 @@ function draw_beer(query, icon, surcharge)
                     {//If element is a way or a relation, get its center
                         if (e.tags['amenity'])
                         {
-                            console.log("way2");
+                            console.log("way3");
                             var pos = new L.LatLng(e.center.lat, e.center.lon);
                             console.log(pos);
                         }
