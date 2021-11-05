@@ -90,7 +90,9 @@ function draw_beer(query, icon, surcharge)
         callback: function(data){
             for(var i = 0 ; i < data.elements.length ; i++)
             {
+                console.log(data);
                 e = data.elements[i];
+                console.log(e);
                 if (e.id in this.instance._ids) return;
                 this.instance._ids[e.id] = true;
                 var icon_o = icon;
@@ -101,7 +103,7 @@ function draw_beer(query, icon, surcharge)
                     {//If element is a node
                         if (e.tags['amenity'])
                         {
-                            console.log("node3");
+                            console.log("node4");
                             var pos = new L.LatLng(e.lat, e.lon);
                             console.log(pos);
                         }
@@ -114,7 +116,7 @@ function draw_beer(query, icon, surcharge)
                     {//If element is a way or a relation, get its center
                         if (e.tags['amenity'])
                         {
-                            console.log("way3");
+                            console.log("way4");
                             var pos = new L.LatLng(e.center.lat, e.center.lon);
                             console.log(pos);
                         }
