@@ -83,6 +83,7 @@ var markerIcons = [];
 
 function draw_beer(query, icon, surcharge)
 {
+ console.log("function draw_beer");
     return new L.OverPassLayer({
         minzoom: 14,
         query: query,
