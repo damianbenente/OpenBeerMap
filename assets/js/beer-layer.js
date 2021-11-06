@@ -88,15 +88,15 @@ function draw_beer(query, icon, surcharge)
         minzoom: 14,
         query: query,
         callback: function(data){
-               //console.log(data.elements.length);
-               //console.log(data);
-            data.forEach(element => console.log(element));
+               console.log(data.elements.length);
+               console.log(data);
+            
             for(var i = 0 ; i < data.elements.length ; i++)
             {
-                //console.log(i);
+                console.log(i);
                
                 e = data.elements[i];
-                //console.log(e);
+                console.log(e);
                 if (e.id in this.instance._ids) return;
                 this.instance._ids[e.id] = true;
                 var icon_o = icon;
