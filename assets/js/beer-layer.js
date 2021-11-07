@@ -19,7 +19,7 @@ function display_restaurant(display)
 function make_overlayAll(restaurant)
 {
     var overpass_url = "data=[out:json];(node(BBOX)[amenity=bar]['brewery'!='none'];way(BBOX)[amenity=bar]['brewery'!='none'];node(BBOX)[amenity=cafe]['cuisine'!='coffee_shop']['brewery'!='none'];way(BBOX)[amenity=cafe]['cuisine'!='coffee_shop']['brewery'!='none'];node(BBOX)[amenity=biergarten]['brewery'!='none'];node(BBOX)[microbrewery=yes]['brewery'!='none'];node(BBOX)['brewery']['brewery'!='none'];way(BBOX)['brewery']['brewery'!='none'];node(BBOX)[amenity=pub]['brewery'!='none'];way(BBOX)[amenity=pub]['brewery'!='none'];";
-    console.log("make_overlayAll   test11114");
+    console.log("make_overlayAll   test11115");
     if (typeof restaurant === 'undefined' || restaurant)
     {
         overpass_url += "node(BBOX)[amenity=restaurant]['brewery'!='none'];way(BBOX)[amenity=restaurant]['brewery'!='none'];"
@@ -88,16 +88,18 @@ function draw_beer(query, icon, surcharge)
         minzoom: 14,
         query: query,
         callback: function(data){
-               //console.log(data.elements.length);
-               //console.log(data);
+
  
             console.log(data);
             for(var i = 0 ; i < data.elements.length ; i++)
             {
                 //console.log(i);
-               console.log(data.elements[i]);
-                /* e = data.elements[i];
+               //console.log(data.elements[i]);
+             
+             
+                 e = data.elements[i];
                 console.log(e);
+             /*
                 if (e.id in this.instance._ids) return;
                 this.instance._ids[e.id] = true;
                 var icon_o = icon;
