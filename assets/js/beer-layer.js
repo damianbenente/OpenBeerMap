@@ -19,7 +19,7 @@ function display_restaurant(display)
 function make_overlayAll(restaurant)
 {
     var overpass_url = "data=[out:json];(node(BBOX)[amenity=bar]['brewery'!='none'];way(BBOX)[amenity=bar]['brewery'!='none'];node(BBOX)[amenity=cafe]['cuisine'!='coffee_shop']['brewery'!='none'];way(BBOX)[amenity=cafe]['cuisine'!='coffee_shop']['brewery'!='none'];node(BBOX)[amenity=biergarten]['brewery'!='none'];node(BBOX)[microbrewery=yes]['brewery'!='none'];node(BBOX)['brewery']['brewery'!='none'];way(BBOX)['brewery']['brewery'!='none'];node(BBOX)[amenity=pub]['brewery'!='none'];way(BBOX)[amenity=pub]['brewery'!='none'];";
-    console.log("make_overlayAll   test11115");
+    console.log("make_overlayAll   test11116");
     if (typeof restaurant === 'undefined' || restaurant)
     {
         overpass_url += "node(BBOX)[amenity=restaurant]['brewery'!='none'];way(BBOX)[amenity=restaurant]['brewery'!='none'];"
@@ -27,58 +27,7 @@ function make_overlayAll(restaurant)
     overpass_url += ");out center;" //overpass_url += ");out center;>;out;"
     return overpass_url
 }
-/*
-function debug_draw_beer(url, icon)
-{
-    return new L.OverPassLayer({
-        minzoom: 17,
-        query: url,
-        callback: function(data){
-            for(var i = 0 ; i < data.elements.length ; i++)
-            {
-                e = data.elements[i];
-                if(e.id in this.instance._ids)
-                    return;
-                this.instance._ids[e.id] = true;
-                if(e.tags !== undefined)
-                {
-                    var pos;
-                    if(e.type === "node")
-                    {//If element is a node
-                        if (e.tags['amenity'])
-                        {
-                            pos = new L.LatLng(e.lat, e.lon);
-                        }
-                        else
-                        {
-                            return
-                        }
-                    }
-                    else if (e.type === "way")
-                    {//If element is a way or a relation, get its center
-                        if (e.tags['amenity'])
-                        {
-                            var pos = new L.LatLng(e.center.lat, e.center.lon);
-                        }
-                        else
-                        {
-                            return
-                        }
-                    }
-                    var popup = this.instance._poiInfo(e.tags, e.id);
-                    var icon_o = icon;
-                    if (e.tags["brewery"]) {icon_o = "assets/img/beers/beer_empty.png"}
-                    var myicon = L.icon({
-                        iconUrl: icon_o
-                    });
-                    var marker = L.marker(pos, {icon: myicon}).bindPopup(popup);
-                    this.instance.addLayer(marker);
-                }
-            }
-        }
-    })
-}
-*/
+
 var markerIcons = [];
 
 function draw_beer(query, icon, surcharge)
@@ -92,18 +41,16 @@ function draw_beer(query, icon, surcharge)
  
             console.log(data);
             for(var i = 0 ; i < data.elements.length ; i++)
-            {
-                //console.log(i);
-               //console.log(data.elements[i]);
-             
-             
+            {             
                  e = data.elements[i];
-                console.log(e);
-             /*
+                //console.log(e);
+             
                 if (e.id in this.instance._ids) return;
                 this.instance._ids[e.id] = true;
                 var icon_o = icon;
                 var pos;
+                console.log(e);
+                /*
                 if(e.tags !== undefined)
                 {
                     if(e.type === "node")
