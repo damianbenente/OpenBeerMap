@@ -80,7 +80,7 @@ function debug_draw_beer(url, icon)
 }
 */
 var markerIcons = [];
-/*
+
 function draw_beer(query, icon, surcharge)
 {
  console.log("function draw_beer");
@@ -184,122 +184,6 @@ function draw_beer(query, icon, surcharge)
         }
     });
 }
-*/
-function draw_beer(query, icon, surcharge)
-{
- console.log("function draw_beer");
-    return new L.OverPassLayer({
-        minzoom: 14,
-        query: query,
-        callback: function(data){
-               console.log(data.elements.length);
-               console.log(data);
-            
-         
-         
-         
-         
-         array.forEach(function(data.element) {
-        console.log(data.element);
-        });
- 
-            for(var i = 0 ; i < data.elements.length ; i++)
-            {
-                console.log(i);
-               
-                e = data.elements[i];
-                console.log(e);
-                if (e.id in this.instance._ids) return;
-                this.instance._ids[e.id] = true;
-                var icon_o = icon;
-                var pos;
-                if(e.tags !== undefined)
-                {
-                    if(e.type === "node")
-                    {//If element is a node
-                        if (e.tags['amenity'])
-                        {
-                            console.log("node5");
-                            var pos = new L.LatLng(e.lat, e.lon);
-                            console.log(pos);
-                        }
-                        else
-                        {
-                            return
-                        }
-                    }
-                    else if (e.type === "way")
-                    {//If element is a way or a relation, get its center
-                        if (e.tags['amenity'])
-                        {
-                            console.log("way5");
-                            var pos = new L.LatLng(e.center.lat, e.center.lon);
-                            console.log(pos);
-                        }
-                        else
-                        {
-                            return
-                        }
-                    }
-                    var content = "";
-                    if(e.tags["name"])
-                    {
-                        content += '<h3 title="' + e.tags["name"] + '">' + e.tags["name"] + '</h3>';
-                    }
-                    else
-                    {
-                        content += "<h3><em data-l10n-id='map_popup_name_unknown'>Unknown name</em></h3>";
-                    }
-                    content += "<table class='table table-condensed'>";
-                    if(e.tags["opening_hours"])
-                    {
-                        content += "<tr><th data-l10n-id='map_popup_opening_hours'>Horaires d'ouvertures</th><td><div class='map-popup-indicator map-popup-indicator-"+ parse_osm_times(e.tags["opening_hours"]) +"'></div>" + e.tags["opening_hours"] +"</td></tr>";
-                    }
-                    if(e.tags["happy_hours"])
-                    {
-                        content += "<tr><th data-l10n-id='map_popup_happy_hours'>Happy Hours</th><td><div class='map-popup-indicator map-popup-indicator-"+ parse_osm_times(e.tags["happy_hours"]) +"'></div>" + e.tags["happy_hours"] +"</td></tr>";
-                    }
-                    if(e.tags["brewery"])
-                    {
-                        content += "<tr><th data-l10n-id='map_popup_beer'>Type de bière pression</th><td class='mapPopupBeersList'>" + e.tags["brewery"].replace(/;/g, ", ") + "</td></tr>";
-                        if (surcharge == false) {icon_o = "assets/img/beers/blue.png"}
-                    }
-                    content +="</table>";
-                    if(e.type == "node" || e.type == "way")
-                    {
-                        content += '<p class="action"><a href="#" class="btn btn-default" onClick="edit_bar(\'' + e.type + '\', ' + e.id.toString() + ');"><i class="fa fa-edit"></i> <span data-l10n-id="map_popup_edit">Edit bar information</span></a></p>';
-                    }
-
-                    if(!(icon_o in markerIcons))
-                    {
-                        markerIcons[icon_o] = L.icon({
-                            iconUrl: icon_o,
-                            iconAnchor:[10, 45],
-                            popupAnchor : [4, -30]
-                        });
-                    }
-                    var myicon = markerIcons[icon_o];
-                    console.log(pos)
-                    console.log(content)
-                    var marker = L.marker(pos, {icon: myicon}).bindPopup(content);
-                    console.log("marker");
-                    console.log(marker);
-                    this.instance.addLayer(marker);
-
-                    marker.on('click', function(e){
-                        document.l10n.localize(['map_popup_name_unknown', 'map_popup_opening_hours', 'map_popup_happy_hours', 'map_popup_beer', 'map_popup_edit'], function(l10n){
-                            localize(l10n, ['map_popup_name_unknown', 'map_popup_opening_hours', 'map_popup_happy_hours', 'map_popup_beer', 'map_popup_edit']);
-                        });
-                    });
-                }
-            }
-        }
-    });
-}
-
-
-
-
 
 
 function edit_bar(type, id)
