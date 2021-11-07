@@ -88,12 +88,17 @@ function draw_beer(query, icon, surcharge)
         minzoom: 14,
         query: query,
         callback: function(data){
-               console.log(data.elements.length);
-               console.log(data);
+               //console.log(data.elements.length);
+               //console.log(data);
             
+         array.forEach(function(data.elements) {
+           console.log(data.elements);
+         });
+         
+         
             for(var i = 0 ; i < data.elements.length ; i++)
             {
-                console.log(i);
+                //console.log(i);
                
                 e = data.elements[i];
                 console.log(e);
