@@ -95,8 +95,8 @@ function draw_beer(query, icon, surcharge)
             for(var i = 0 ; i < data.elements.length ; i++)
             {
                 //console.log(i);
-               
-                e = data.elements[i];
+               console.log(data.elements[i]);
+                /* e = data.elements[i];
                 console.log(e);
                 if (e.id in this.instance._ids) return;
                 this.instance._ids[e.id] = true;
@@ -179,7 +179,7 @@ function draw_beer(query, icon, surcharge)
                         document.l10n.localize(['map_popup_name_unknown', 'map_popup_opening_hours', 'map_popup_happy_hours', 'map_popup_beer', 'map_popup_edit'], function(l10n){
                             localize(l10n, ['map_popup_name_unknown', 'map_popup_opening_hours', 'map_popup_happy_hours', 'map_popup_beer', 'map_popup_edit']);
                         });
-                    });
+                    }); */
                 }
             }
         }
