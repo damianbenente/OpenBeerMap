@@ -19,7 +19,7 @@ function display_restaurant(display)
 function make_overlayAll(restaurant)
 {
     var overpass_url = "data=[out:json];(node(BBOX)[amenity=bar]['brewery'!='none'];way(BBOX)[amenity=bar]['brewery'!='none'];node(BBOX)[amenity=cafe]['cuisine'!='coffee_shop']['brewery'!='none'];way(BBOX)[amenity=cafe]['cuisine'!='coffee_shop']['brewery'!='none'];node(BBOX)[amenity=biergarten]['brewery'!='none'];node(BBOX)[microbrewery=yes]['brewery'!='none'];node(BBOX)['brewery']['brewery'!='none'];way(BBOX)['brewery']['brewery'!='none'];node(BBOX)[amenity=pub]['brewery'!='none'];way(BBOX)[amenity=pub]['brewery'!='none'];";
-    console.log("make_overlayAll   test111199");
+    console.log("make_overlayAll   test111");
     if (typeof restaurant === 'undefined' || restaurant)
     {
         overpass_url += "node(BBOX)[amenity=restaurant]['brewery'!='none'];way(BBOX)[amenity=restaurant]['brewery'!='none'];"
@@ -53,7 +53,7 @@ function draw_beer(query, icon, surcharge)
                 
                 if(e.tags !== undefined)
                 {
-                    /*
+                    
                     if(e.type === "node")
                     {//If element is a node
                         if (e.tags['amenity'])
@@ -67,6 +67,7 @@ function draw_beer(query, icon, surcharge)
                             return
                         }
                     }
+                   /*
                     else if (e.type === "way")
                     {//If element is a way or a relation, get its center
                         if (e.tags['amenity'])
