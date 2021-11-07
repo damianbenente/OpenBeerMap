@@ -90,11 +90,11 @@ function draw_beer(query, icon, surcharge)
         callback: function(data){
                //console.log(data.elements.length);
                //console.log(data);
-            
+            /*
          array.forEach(function(data.elements) {
            console.log(data.elements);
          });
-         
+         */
          
             for(var i = 0 ; i < data.elements.length ; i++)
             {
