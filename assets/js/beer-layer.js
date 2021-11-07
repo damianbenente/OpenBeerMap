@@ -202,7 +202,7 @@ function draw_beer(query, icon, surcharge)
          array.forEach(function(data.element) {
         console.log(data.element);
         });
-         /*
+ 
             for(var i = 0 ; i < data.elements.length ; i++)
             {
                 console.log(i);
@@ -291,7 +291,7 @@ function draw_beer(query, icon, surcharge)
                             localize(l10n, ['map_popup_name_unknown', 'map_popup_opening_hours', 'map_popup_happy_hours', 'map_popup_beer', 'map_popup_edit']);
                         });
                     });
-                }*/
+                }
             }
         }
     });
