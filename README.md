@@ -1,6 +1,6 @@
-OpenBeerMap.github.io
+Clone of OpenBeerMap.github.io
 =====================
 
 Visualiser et éditer les bières pressions disponibles dans les bars.
 
-http://openbeermap.github.io/
+https://damianbenente.github.io/OpenBeerMap/
